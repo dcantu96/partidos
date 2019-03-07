@@ -19,17 +19,15 @@
 <th></th>
 
 <% @votes.each do |party_votes| %>
-    <% percentage = ((party_votes.first.count.to_f/@all_votes.count.to_f)*100).round(2) %>
-    <% color = party_votes.third %>
-<tr>
-    <td><%= party_votes.second %></td>
-    <td><%= party_votes.first.count %></td>
-    <td><%= percentage %>%</td>
-    <td colspan="9">
-        <div class="progress">
-            <div class="progress-bar progress-bar-<%= color %>" role="progressbar" style="width: <%= percentage %>%;" aria-valuenow="<%= percentage %>" aria-valuemin="0" aria-valuemax="100"><%= percentage %>%</div>
-        </div>
-    </td>
+    <tr>
+        <td><%= party_votes[:name] %></td>
+        <td><%= party_votes[:votes] %></td>
+        <td><%= party_votes[:percentage] %>%</td>
+        <td colspan="9">
+            <div class="progress">
+                <div class="progress-bar progress-bar-<%= party_votes[:color] %>" role="progressbar" style="width: <%= party_votes[:percentage] %>%;" aria-valuenow="<%= party_votes[:percentage] %>" aria-valuemin="0" aria-valuemax="100"><%= party_votes[:percentage] %>%</div>
+            </div>
+        </td>
     </tr>
 <% end %>
 </table>

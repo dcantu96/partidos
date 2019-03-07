@@ -12,6 +12,6 @@ Party.create name: 'Verde'
 Party.create name: 'Otro'
 
 
-# 500.times do
-#     Vote.create party: Party.all.sample
-# end
+500.times do
+    Vote.create party: Party.all.sample
+end
