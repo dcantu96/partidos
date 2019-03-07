@@ -1,0 +1,35 @@
+<div class="col text-center">
+    <h1 class="text-center">Vota Aqui</h1>
+    <%= render 'vote_form' %>
+</div>
+
+
+<table class="table">
+<th scope="col">Partido</th>
+<th scope="col">Votos</th>
+<th scope="col">Porcentaje</th>
+<th scope="col">Tendencia</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+
+<% @votes.each do |party_votes| %>
+    <% percentage = ((party_votes.first.count.to_f/@all_votes.count.to_f)*100).round(2) %>
+    <% color = party_votes.third %>
+<tr>
+    <td><%= party_votes.second %></td>
+    <td><%= party_votes.first.count %></td>
+    <td><%= percentage %>%</td>
+    <td colspan="9">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: <%= percentage %>%;" aria-valuenow="<%= percentage %>" aria-valuemin="0" aria-valuemax="100"><%= percentage %>%</div>
+        </div>
+    </td>
+    </tr>
+<% end %>
+</table>
