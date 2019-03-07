@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :party_id %>
+    <%= form.label :party_id, "Partido" %>
     <%= form.collection_select :party_id, Party.all, :id, :name%>
   </div>
 
