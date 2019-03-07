@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# Party.create name: 'Azul'
-# Party.create name: 'Amarillo'
-# Party.create name: 'Morado'
-# Party.create name: 'Verde'
-# Party.create name: 'Otro'
+Party.create name: 'Azul'
+Party.create name: 'Amarillo'
+Party.create name: 'Morado'
+Party.create name: 'Verde'
+Party.create name: 'Otro'
 
 
 # 500.times do
